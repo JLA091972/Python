@@ -9,6 +9,7 @@ class BankAccount:
         # don't worry about user info here; we'll involve the User class soon
         self.int_rate = int_rate
         self.balance = balance
+        BankAccount.all_accounts.append(self)
 
     def deposit(self, amount):
         # your code here
@@ -47,10 +48,9 @@ class BankAccount:
             return self
 
     @classmethod
-    def all_accounts(cls):
-        # for eachaccount in cls.all_accounts:
-        #     print (eachaccount.balance)
-        print(cls.all_accounts)
+    def all_balances(cls):
+        for eachaccount in cls.all_accounts:
+            print(f"Account Balance: ${eachaccount.balance}, Interst Rate: ${eachaccount.int_rate}")
 
 account1 = BankAccount(1.5,200)
 account1.deposit(100).deposit(100).deposit(100).withdraw(200).yield_interest().display_account_info()
@@ -59,7 +59,7 @@ account2 = BankAccount(1.5,200)
 account2.deposit(100).deposit(100).withdraw(50).withdraw(50).withdraw(50).withdraw(50).yield_interest().display_account_info()
 
 
-BankAccount.all_accounts()
+BankAccount.all_balances()
 
 
 
