@@ -11,5 +11,3 @@ player_objects = []
 
 for player in players:
     player_objects.append(Player(player))
-    
-
