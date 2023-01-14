@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Counter</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        padding-top: 20px;
+        text-align: center;
+        position: fixed;
+        top: 0%;
+        left: 50%;
+    }
+
+    .clickers {
+        display: flex;
+        /* flex-wrap: wrap; */
+        color: black;
+        position: fixed;
+        font-size: larger;
+        top: 20%;
+        left: 50%;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .clickreset {
+        text-decoration: none;
+        width: 70px;
+        height: 40px;
+        border: 3px solid black;
+        background-color: lightblue;
+        margin-left: 50px;
+        
+    }
+
+    .clickincrease {
+        text-decoration: none;
+        width: 70px;
+        height: 40px;
+        border: 3px solid black;
+        background-color: lightcoral;
+    }
+
+    .displaycount {
+        position: fixed;
+        font-size: larger;
+        top: 10%;
+        left: 50%;
+        margin-left: 50px;
+    }
+</style>
+
+<body>
+    <h1>Counter</h1>
+
+    <div class="clickers">
+        <div class="clickincrease">
+            <a href="/increase2">Plus2</a>
+        </div>
+    
+        <div class="clickreset">
+            <a href="/destroy_session">Reset</a>
+        </div>
+    </div>
+
+    <div class="displaycount">
+        <p>{{session.counter}}</p>
+    </div>
+
+</body>
+</html>
