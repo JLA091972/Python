@@ -16,6 +16,10 @@ def result():
     session['dojoloc'] = request.form['dojoloc']
     session['favlang'] = request.form['favlang']
     session['comments'] = request.form ['comments']
+    return redirect('/display')
+
+@app.route('/display')
+def display():
     return render_template('displayresult.html')
 
 if __name__=="__main__":
