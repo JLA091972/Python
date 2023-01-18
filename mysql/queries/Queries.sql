@@ -38,5 +38,7 @@ SELECT * FROM ninjas WHERE dojo_id = (SELECT id FROM dojos_and_ninjas_schema.doj
 
 
 -- Query: Retrieve the last ninja's dojo
-
+SELECT * from ninjas where dojo_id = (SELECT id FROM dojos_and_ninjas_schema.dojos ORDER BY id DESC LIMIT 1) ORDER BY id DESC LIMIT 1;
 SELECT dojo_id from ninjas ORDER BY id DESC LIMIT 1;
+
+SELECT * from dojos where dojos.id = (SELECT id FROM dojos_and_ninjas_schema.dojos ORDER BY id DESC LIMIT 1) 
