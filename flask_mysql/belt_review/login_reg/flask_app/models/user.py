@@ -69,7 +69,7 @@ class User:
         # check if username is at least 2 char
         if len(user['first_name']) < 2:
             is_valid = False
-            flash("first name must be at least 2 characters")
+            flash("First name must be at least 2 characters")
         
         #check if password matches with confirm password
         if user['password'] != user['confirm-password']:
@@ -84,7 +84,7 @@ class User:
         # check length of password is at least 8 chars in lenght
         if len(user['password']) < 8:
             is_valid = False
-            flash("password must be at least 8 characters")
+            flash("Password must be at least 8 characters")
 
         # return value of is_valid
         return is_valid

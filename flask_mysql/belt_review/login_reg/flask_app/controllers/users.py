@@ -41,20 +41,20 @@ def add_new_user():
     return redirect('/recipes')
 
 
-#! get login info and verify
+# get login info and verify
 @app.route('/login', methods=['post'])
 def login():
     print(request.form)
-    # TODO see if the email is in our DB
+    # check if email  exists in DB
     user = User.get_by_email(request.form)
     if not user:
-        flash("invalid credentials")
+        flash("Invalid Credentials")
         return redirect("/")
-    # TODO check to see of the password provided matches the password in our DB
+    # check to see of the password provided matches the password in our DB
     password_valid = bcrypt.check_password_hash(user.password, request.form['password'])
     print(password_valid)
     if not password_valid:
-        flash("invalid credentials")
+        flash("Invalid Credentials")
         return redirect('/')
     # TODO log in the user
     session['user_id'] = user.id
