@@ -13,6 +13,9 @@ import re
 # create a regular expression object to check to validate email
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$') 
 
+#check password for a 
+PASSWORD_REGEX = re.compile(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]')
+
 #define Database name
 DATABASE = 'login_reg'
 
@@ -85,6 +88,11 @@ class User:
         if len(user['password']) < 8:
             is_valid = False
             flash("Password must be at least 8 characters")
+
+        if not PASSWORD_REGEX.match(user['password']):
+            flash("Passwords to have a least 1 number and 1 uppercase letter")
+            is_valid = False
+
 
         # return value of is_valid
         return is_valid
