@@ -103,10 +103,9 @@ class Recipe:
             flash("Cooked Date must be filled")
 
         # check if recipe cooked date is filled in
-        # if recipe['under_30mins'] == "yes":
-        #     is_valid = False
-        # else:
-        #     flash("Cook Time 'Under 30 mins' must be filled")
+        if not "under_30mins" in recipe:
+            is_valid = False
+            flash("Cook Time 'Under 30 mins' must be filled")
         
         #return value of is_valid        
         return is_valid
